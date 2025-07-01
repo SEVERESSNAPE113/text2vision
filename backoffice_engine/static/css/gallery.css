@@ -1,0 +1,299 @@
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #0e0e0e;
+  color: white;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.gallery-wrapper {
+  margin-top: 100px;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.gallery-title {
+  font-size: 36px;
+  margin-bottom: 40px;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.gallery-item {
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  background-color: #111;
+  border: 1px solid #333;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* ========== Modal ========== */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.85);
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-box {
+  display: flex;
+  width: 85%;
+  max-width: 1100px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(145deg, #0d0d0d, #1a1a1a);
+  box-shadow: 0 0 20px #00ffe066, 0 0 60px #00ffe033;
+  transform: scale(1);
+  transition: all 0.3s ease;
+}
+
+/* ========== Left Image ========== */
+.modal-left {
+  flex: 1.2;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  position: relative;
+}
+
+.modal-image-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-height: 90vh;
+}
+
+.modal-image-wrapper img {
+  width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #00ffe055;
+}
+
+/* ========== Right Info ========== */
+.modal-right {
+  flex: 0.8;
+  background-color: #111;
+  padding: 30px 25px;
+  color: #fff;
+  position: relative;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.modal-right h2 {
+  color: #00ffe0;
+  font-size: 28px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #00ffe0;
+  padding-bottom: 10px;
+}
+
+.modal-right p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 15px 0;
+}
+
+.modal-right strong {
+  color: #79f8e0;
+}
+
+.modal-right .close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 26px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.modal-right .close:hover {
+  color: #00ffe0;
+  transform: scale(1.2);
+}
+
+/* ========== Download Button ========== */
+.download-btn {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  width: 40px;
+  height: 40px;
+  background-color: #00ffff;
+  border-radius: 50%;
+  color: #000;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 0 10px #00ffff;
+  transition: all 0.3s ease-in-out;
+  z-index: 10;
+}
+
+.download-btn:hover {
+  transform: scale(1.2) rotate(-10deg);
+  box-shadow: 0 0 20px #00ffff, 0 0 10px #0ff;
+}
+
+/* ========== General Container ========== */
+.container,
+.container-fluid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+/* ======== Feedback Success Message ======== */
+.success-message {
+  background-color: #d4edda;
+  border-left: 6px solid #28a745;
+  color: #155724;
+  padding: 12px 20px;
+  margin: 20px auto;
+  width: fit-content;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  animation: fadeInOut 3s ease-in-out forwards;
+  box-shadow: 0 0 10px rgba(40, 167, 69, 0.5);
+}
+
+/* ======== Animation for Feedback Message ======== */
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+/* Styles for the bottom gallery buttons */
+.gallery-buttons {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.theme-button {
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 30px;
+    text-decoration: none;
+    color: #000;
+    background: linear-gradient(90deg, #00c3ff, #d9ff00);
+    margin: 0 10px;
+    transition: all 0.3s ease;
+}
+
+.theme-button:hover {
+    background: linear-gradient(90deg, #d9ff00, #00c3ff);
+    transform: scale(1.05);
+}
+/* ===========================
+   Category Filter Styles
+=========================== */
+/* ===========================
+   Filter Dropdown Styling
+   =========================== */
+.filter-wrapper {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.filter-wrapper label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  margin-right: 10px;
+}
+
+.filter-wrapper select {
+  padding: 8px 12px;
+  font-size: 15px;
+  border-radius: 5px;
+  border: 1px solid #555;
+  background-color: #222;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.filter-wrapper select:hover,
+.filter-wrapper select:focus {
+  border-color: #22f9ff;
+  box-shadow: 0px 0px 5px rgba(34, 249, 255, 0.5);
+}
+
+.filter-wrapper option {
+  background-color: #222;
+  color: #fff;
+}
+
+

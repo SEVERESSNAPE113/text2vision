@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+{%extends 'header_footer.html'%}
+{%block content%}
+<!-- Mirrored from bplugins.net/zex//blog/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 Jun 2025 03:38:07 GMT -->
+<head>
+    {%load static%}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/png">
+    <!-- Site title -->
+    <title>Blog | Zex - Ai Image Generate Website HTML5 Template | 2023</title>
+
+    <!-- Styles External -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fontawesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Styles External End -->
+</head>
+
+<body class="bp-bg-body bg-no-repeat">
+    <!-- start journey -->
+
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="loader">
+            <div>
+                <ul>
+                    <li>
+                        <svg viewBox="0 0 90 120" fill="currentColor">
+                            <path
+                                d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z">
+                            </path>
+                        </svg>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 90 120" fill="currentColor">
+                            <path
+                                d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z">
+                            </path>
+                        </svg>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 90 120" fill="currentColor">
+                            <path
+                                d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z">
+                            </path>
+                        </svg>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 90 120" fill="currentColor">
+                            <path
+                                d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z">
+                            </path>
+                        </svg>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 90 120" fill="currentColor">
+                            <path
+                                d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z">
+                            </path>
+                        </svg>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 90 120" fill="currentColor">
+                            <path
+                                d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z">
+                            </path>
+                        </svg>
+                    </li>
+                </ul>
+            </div><span>Loading Zex.ai</span>
+        </div>
+    </div>
+    <!-- Preloader End -->
+    <!-- Scroll Bottom To Top -->
+    <button class="scrollToTopBtn showBtn"><i class="fa-solid fa-hand-point-up"></i></button>
+
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-overlay mobile-overlay--sidebar">
+        <div class="mobile-overlay__box">
+            <div class="mobile-overlay__header">
+                <div class="mobile-overlay__logo">
+                    <img src="{% static 'images/logo.png' %}" alt="">
+                </div>
+                <div class="mobile-overlay__close">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+            </div>
+            <div class="mobile-overlay__main-menu">
+                <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+            </div>
+        </div>
+    </div>
+    <div class="mobile-overlay--backdrop"></div>
+
+    <!-- main wrapper -->
+    <main id="bp-main">
+
+        <!-- Blog Area -->
+        <section class="section blog pt-200 pb-90">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-30">
+                        <div class="section-title">
+                            <h2 class="section-title__big text-white">Blog</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-30">
+                        <form action="#" class="section-search">
+                            <button class="section-search__button">
+                                <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="11.2917" cy="11.2917" r="9.47917" stroke="white" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M26.1875 26.1875L18.0625 18.0625" stroke="white" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12" data-aos="fade-down-right" data-aos-duration="3000">
+                        <div class="blog-block blog-block--style2">
+                            <div class="row align-items-center">
+                                <div class="col-lg-6 mb-45">
+                                    <div class="blog-block__image">
+                                        <a href="/blog_details/">
+                                            <img class="border-radius-default" src="{% static 'images/blog/blog-image.jpg' %}" alt="Blog">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 mb-45">
+                                    <div class="blog-block__content">
+                                        <span class="blog-block__tag">TXAA</span>
+                                        <h3 class="blog-block__heading mb-15">
+                                            <a class="blog-block__heading-link" href="/blog_details/">
+                                                Top successful AI chatbots tool 2023
+                                            </a>
+                                        </h3>
+                                        <p class="blog-block__text black-100">We have successful AI for your imagination generation.</p>
+                                        <div class="blog-block__meta mb-15">
+                                            <ul>
+                                                <li>2 July 2023</li>
+                                                <!--<li>0 Comments</li>-->
+                                            </ul>
+                                        </div>
+                                        <a href="/blog_details/" class="blog-block__link">
+                                            Read more
+                                            <i>
+                                                <img src="{% static 'icons/arrow-icon.svg' %}" alt="icon">
+                                            </i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 mb-30" data-aos="fade-down-right" data-aos-duration="3000">
+                        <div class="blog-block blog-block--style2">
+                            <div class="blog-block__image mb-20">
+                                <a href="/blog_details/"><img class="border-radius-default"
+                                    src="{% static 'images/blog/blog-image-small-1.jpg' %}" alt="Blog"></a>
+                            </div>
+                            <div class="blog-block__content">
+                                <span class="blog-block__tag">TXAA</span>
+                                <h4 class="blog-block__heading mb-15">
+                                    <a class="blog-block__heading-link" href="/blog_details/">
+                                        Top successful AI chatbots tool 2023
+                                    </a>
+                                </h4>
+                                <div class="blog-block__meta border-bottom-0">
+                                    <ul>
+                                        <li>2 July 2023</li>
+                                       <!---- <li>0 Comments</li>-->
+                                    </ul>
+                                </div>
+                                <a href="/blog_details/" class="blog-block__link">
+                                    Read more
+                                    <i>
+                                        <img src="{% static 'icons/arrow-icon.svg' %}" alt="icon">
+                                    </i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-30" data-aos="fade-down-right" data-aos-duration="3000">
+                        <div class="blog-block blog-block--style2">
+                            <div class="blog-block__image mb-20">
+                                <a href="/blog_details/"><img class="border-radius-default"
+                                        src="{% static 'images/blog/blog-image-small-2.jpg' %}" alt="Blog"></a>
+                            </div>
+                            <div class="blog-block__content">
+                                <span class="blog-block__tag">TXAA</span>
+                                <h4 class="blog-block__heading mb-15">
+                                    <a class="blog-block__heading-link" href="/blog_details/">
+                                        AI-Powered Virtual Assistants 2023
+                                    </a>
+                                </h4>
+                                <div class="blog-block__meta border-bottom-0">
+                                    <ul>
+                                        <li>2 July 2023</li>
+                                        <!--<li>0 Comments</li>-->
+                                    </ul>
+                                </div>
+                                <a href="/blog_details/" class="blog-block__link">
+                                    Read more
+                                    <i>
+                                        <img src="{% static 'icons/arrow-icon.svg' %}" alt="icon">
+                                    </i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-30" data-aos="fade-down-right" data-aos-duration="3000">
+                        <div class="blog-block blog-block--style2">
+                            <div class="blog-block__image mb-20">
+                                <a href="/blog_details/"><img class="border-radius-default"
+                                        src="{% static 'images/blog/blog-image-small-3.jpg' %}" alt="Blog"></a>
+                            </div>
+                            <div class="blog-block__content">
+                                <span class="blog-block__tag">TXAA</span>
+                                <h4 class="blog-block__heading mb-15">
+                                    <a class="blog-block__heading-link" href="/blog_details/">
+                                        Exploring the Latest Breakthroughs in AI
+                                    </a>
+                                </h4>
+                                <div class="blog-block__meta border-bottom-0">
+                                    <ul>
+                                        <li>2 July 2023</li>
+                                        <!--<li>0 Comments</li>-->
+                                    </ul>
+                                </div>
+                                <a href="/blog_details/" class="blog-block__link">
+                                    Read more
+                                    <i>
+                                        <img src="{% static 'icons/arrow-icon.svg' %}" alt="icon">
+                                    </i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-30" data-aos="fade-down-right" data-aos-duration="3000">
+                        <div class="blog-block blog-block--style2">
+                            <div class="blog-block__image mb-20">
+                                <a href="/blog_details/"><img class="border-radius-default"
+                                        src="{% static 'images/blog/blog-image-small-4.jpg' %}" alt="Blog"></a>
+                            </div>
+                            <div class="blog-block__content">
+                                <span class="blog-block__tag">TXAA</span>
+                                <h4 class="blog-block__heading mb-15">
+                                    <a class="blog-block__heading-link" href="/blog_details/">
+                                        The Future of AI in Healthcare Support
+                                    </a>
+                                </h4>
+                                <div class="blog-block__meta border-bottom-0">
+                                    <ul>
+                                        <li>2 July 2023</li>
+                                        <!--<li>0 Comments</li>-->
+                                    </ul>
+                                </div>
+                                <a href="/blog_details/" class="blog-block__link">
+                                    Read more
+                                    <i>
+                                        <img src="{% static 'icons/arrow-icon.svg' %}" alt="icon">
+                                    </i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-30" data-aos="fade-down-right" data-aos-duration="3000">
+                        <div class="blog-block blog-block--style2">
+                            <div class="blog-block__image mb-20">
+                                <a href="/blog_details/"><img class="border-radius-default"
+                                        src="{% static 'images/blog/blog-image-small-5.jpg' %}" alt="Blog"></a>
+                            </div>
+                            <div class="blog-block__content">
+                                <span class="blog-block__tag">TXAA</span>
+                                <h4 class="blog-block__heading mb-15">
+                                    <a class="blog-block__heading-link" href="/blog_details/">
+                                        AI in Business Trans-forming Industries
+                                    </a>
+                                </h4>
+                                <div class="blog-block__meta border-bottom-0">
+                                    <ul>
+                                        <li>2 July 2023</li>
+                                        <!--<li>0 Comments</li>-->
+                                    </ul>
+                                </div>
+                                <a href="/blog_details/" class="blog-block__link">
+                                    Read more
+                                    <i>
+                                        <img src="{% static 'icons/arrow-icon.svg' %}" alt="icon">
+                                    </i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-30" data-aos="fade-down-right" data-aos-duration="3000">
+                        <div class="blog-block blog-block--style2">
+                            <div class="blog-block__image mb-20">
+                                <a href="/blog_details/"><img class="border-radius-default"
+                                        src="{% static 'images/blog/blog-image-small-6.jpg' %}" alt="Blog"></a>
+                            </div>
+                            <div class="blog-block__content">
+                                <span class="blog-block__tag">TXAA</span>
+                                <h4 class="blog-block__heading mb-15">
+                                    <a class="blog-block__heading-link" href="/blog_details/">
+                                        Ethical Implications of AI Navigating 2023
+                                    </a>
+                                </h4>
+                                <div class="blog-block__meta border-bottom-0">
+                                    <ul>
+                                        <li>2 July 2023</li>
+                                        <!--<li>0 Comments</li>-->
+                                    </ul>
+                                </div>
+                                <a href="/blog_details/" class="blog-block__link">
+                                    Read more
+                                    <i>
+                                        <img src="{% static 'icons/arrow-icon.svg' %}" alt="icon">
+                                    </i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Blog Area End -->
+
+    </main>
+    <!-- end main wrapper -->
+
+
+    <!-- end journey -->
+
+    <!-- Javascript External -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'js/gsap.min.js' %}"></script>
+    <script src="{% static 'js/ScrollTrigger.min.js' %}"></script>
+    <script src="{% static 'js/aos.js' %}"></script>
+    <script src="{% static 'js/magnific-popup.min.js' %}"></script>
+    <script src="app.js"></script>
+    <!-- Javascript External End -->
+</body>
+
+
+{%endblock%}

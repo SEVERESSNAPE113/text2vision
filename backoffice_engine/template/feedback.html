@@ -1,0 +1,33 @@
+{% extends 'header_footer.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fontawesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/feedback.css' %}">
+</head>
+
+<body>
+    <main>
+        <div class="feedback-container">
+            <h2>Feedback</h2>
+            {% if feedback_sent %}
+                <div class="success-message">
+                    ✅ Feedback sent successfully!
+                </div>
+            {% endif %}
+            <form class="feedback-form" method="POST" action="/feedback/">
+                {% csrf_token %}
+                <textarea name="feedback" class="feedback-textarea" placeholder="Enter your feedback, suggestions or comments here..."></textarea>
+                <button type="submit" class="submit-btn">Submit Feedback</button>
+            </form>
+        </div>
+    </main>
+{% endblock %}

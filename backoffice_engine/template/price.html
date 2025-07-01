@@ -1,0 +1,202 @@
+{% extends 'header_footer.html' %}
+{% load static mathfilters %}
+
+{% block content %}
+<!doctype html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/png">
+    <title>Pricing | Zex - AI Image Generator</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fontawesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+    .price-data {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .price-data:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 15px 30px rgba(0,0,0,0.15);
+    }
+    .already-subscribed {
+        font-weight: bold;
+        color: #28a745;
+        text-align: center;
+    }
+    .price-switcher__switch {
+        cursor: pointer;
+    }
+    .buy-button, .login-button {
+        display: block;
+        text-align: center;
+        padding: 12px 15px;
+        border-radius: 8px;
+        background: #F37254;
+        color: #fff;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    .buy-button:hover, .login-button:hover {
+        opacity: 0.9;
+    }
+    </style>
+</head> 
+
+<body class="bp-bg-body bg-no-repeat" data-bg-image="{% static 'images/bg/price-bg.png' %}">
+<main id="bp-main">
+    <section id="price" class="price pt-200 pb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 mx-auto">
+                    <div class="section-title section-title--style2 position-relative text-center mb-45">
+                        <h2 class="section-title__big text-white mb-25">Pricing</h2>
+                        <div class="price-switcher price-switcher--style2">
+                            <span class="price-switcher__name">Pay Monthly</span>
+                            <div class="price-switcher__switch">
+                                <input type="checkbox" class="price-switcher__toggle" id="billingToggle">
+                            </div>
+                            <span class="price-switcher__name">Pay Yearly</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="price-table">
+                <!-- Monthly Plans -->
+                <div class="price-content show" id="monthly">
+                    <div class="row">
+                        {% for data in all_plan %}
+                        <div class="col-xl-4 mb-30" data-aos="fade-up" data-aos-duration="800">
+                            <div class="price-data price-data--style2">
+                                <span class="price-data__type">{{ data.name }}</span>
+                                <h4 class="price-data__price">₹{{ data.price }}</h4>
+                                <ul class="price-data__details">
+                                    <li><img src="{% static 'icons/check-icon-2.svg' %}" alt="icon">{{ data.credit }}: CREDITS</li>
+                                    <li><img src="{% static 'icons/check-icon-2.svg' %}" alt="icon">{{ data.duration_days }}: DAYS</li>    
+                                </ul>
+                                <div class="price-data__button">
+                                    {% if data.id == active_plan_id %}
+                                        <span class="already-subscribed">ALREADY SUBSCRIBED</span>
+                                    {% else %}
+                                        {% if request.session.id %}
+                                            <form action="/payment/" method="POST">
+                                                {% csrf_token %}
+                                                <input type="hidden" name="planid" value="{{ data.id }}">
+                                                <input type="hidden" name="userid" value="{{ request.session.id }}">
+                                                {% if data.price != 0 %}
+                                                    <script
+                                                        src="https://checkout.razorpay.com/v1/checkout.js"
+                                                        data-key="rzp_test_y3hwosYJV9qi37"
+                                                        data-amount="{{ data.price|mul:100 }}"
+                                                        data-currency="INR"
+                                                        data-order_id="{{ payment.id }}"
+                                                        data-buttontext="SUBSCRIBE"
+                                                        data-name="TEXT2VISION"
+                                                        data-description="AI image generator"
+                                                        data-image="{% static 'images/favicon.png' %}"
+                                                        data-prefill.name="{{ request.user.get_full_name }}"
+                                                        data-prefill.email="{{ request.user.email }}"
+                                                        data-theme.color="#F37254">
+                                                    </script>
+                                                {% endif %}
+                                            </form>
+                                        {% else %}
+                                            <a href='/login/' class="login-button">Login to Subscribe</a>
+                                        {% endif %}
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <!-- Yearly Plans -->
+                <div class="price-content" id="yearly">
+                    <div class="row">
+                        {% for data in all_plan_yearly %}
+                        <div class="col-xl-4 mb-30" data-aos="fade-up" data-aos-duration="800">
+                            <div class="price-data price-data--style2">
+                                <span class="price-data__type">{{ data.name }}</span>
+                                <h4 class="price-data__price">₹{{ data.price }}</h4>
+                                <ul class="price-data__details">
+                                    <li><img src="{% static 'icons/check-icon-2.svg' %}" alt="icon">{{ data.credit }}: CREDITS</li>
+                                    <li><img src="{% static 'icons/check-icon-2.svg' %}" alt="icon">{{ data.duration_days }}: DAYS</li>
+                                </ul>
+                                <div class="price-data__button">
+                                    {% if data.id == active_plan_id %}
+                                        <span class="already-subscribed">ALREADY SUBSCRIBED</span>
+                                    {% else %}
+                                        {% if request.session.id %}
+                                            <form action="/payment/" method="POST">
+                                                {% csrf_token %}
+                                                <input type="hidden" name="planid" value="{{ data.id }}">
+                                                <input type="hidden" name="userid" value="{{ request.session.id }}">
+                                                <script
+                                                    src="https://checkout.razorpay.com/v1/checkout.js"
+                                                    data-key="rzp_test_y3hwosYJV9qi37"
+                                                    data-amount="{{ data.price|mul:100 }}"
+                                                    data-currency="INR"
+                                                    data-order_id="{{ payment.id }}"
+                                                    data-buttontext="SUBSCRIBE"
+                                                    data-name="TEXT2VISION"
+                                                    data-description="AI image generator"
+                                                    data-image="{% static 'images/favicon.png' %}"
+                                                    data-prefill.name="{{ request.user.get_full_name }}"
+                                                    data-prefill.email="{{ request.user.email }}"
+                                                    data-theme.color="#F37254">
+                                                </script>
+                                            </form>
+                                        {% else %}
+                                            <a href='/login/' class="login-button">Login to Subscribe</a>
+                                        {% endif %}
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Scripts -->
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'js/swiper-bundle.min.js' %}"></script>
+<script src="{% static 'js/gsap.min.js' %}"></script>
+<script src="{% static 'js/ScrollTrigger.min.js' %}"></script>
+<script src="{% static 'js/aos.js' %}"></script>
+<script src="{% static 'js/magnific-popup.min.js' %}"></script>
+<script src="{% static 'js/app.js' %}"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const toggle = document.getElementById('billingToggle');
+        const mon = document.getElementById('monthly');
+        const yr = document.getElementById('yearly');
+
+        function update() {
+            if (toggle.checked) {
+                mon.classList.remove('show');
+                yr.classList.add('show');
+            } else {
+                yr.classList.remove('show');
+                mon.classList.add('show');
+            }
+        }
+        toggle.addEventListener('change', update);
+        update();
+    });
+    AOS.init({ offset: 100, duration: 800, easing: 'ease-out', once: true });
+</script>
+</body>
+</html>
+{% endblock %}

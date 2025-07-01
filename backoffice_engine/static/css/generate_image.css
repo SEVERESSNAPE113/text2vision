@@ -1,0 +1,255 @@
+/* All your previous styles remain here */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0e0e0e, #1f1f1f);
+  color: white;
+}
+
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: calc(100vh - 80px);
+  padding-top: 120px; /* increased padding */
+}   
+
+.form-container {
+  background: rgba(20, 20, 20, 0.85);
+  backdrop-filter: blur(15px);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  width: 90%;
+  max-width: 600px;
+  transition: transform 0.3s ease;
+  animation: slideIn 1s ease;
+}
+
+.form-container h1 {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 30px;
+  background: linear-gradient(to right, #7efff5, #ffe07e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 12px;
+  display: block;
+  font-size: 16px;
+}
+
+select, textarea, input[type=number] {
+  width: 100%;
+  padding: 15px 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 20px;
+  outline: none;
+  transition: border 0.3s;
+}
+
+select:focus, textarea:focus, input[type=number]:focus {
+  border: 1px solid #7efff5;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(to right, #7efff5, #ffe07e);
+  color: #000;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Sample Images Styling */
+.sample-images {
+  text-align: center;
+  margin: 50px 0;
+  animation: fadeIn 1.5s ease;
+}
+
+.sample-images h2 {
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+.images-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.image-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.4s;
+}
+
+.image-card:hover {
+  transform: scale(1.05);
+}
+
+.image-card img {
+  width: 300px;
+  border-radius: 12px;
+}
+
+/* Animations */
+@keyframes slideIn {
+  0% { transform: translateY(-50px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.custom-select {
+  width: 100%;
+  padding: 15px 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 20px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='white' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  background-size: 14px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.custom-select:focus {
+  border-color: #7efff5;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.custom-select option {
+  background: #1c1c1c;
+  color: white;
+}
+.readonly-input {
+  width: 100%;
+  padding: 15px 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #ccc;
+  font-size: 16px;
+  margin-bottom: 20px;
+  outline: none;
+  resize: none;
+  cursor: not-allowed;
+}
+
+.readonly-input:focus {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.readonly-input[readonly] {
+  color: #aaa;
+}
+.image-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.3); /* Neon Glow */
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  max-width: 850px;
+  margin: auto;
+}
+
+.image-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 50px rgba(0, 255, 255, 0.5); /* Glow expands on hover */
+}
+
+.image-card img {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 16px;
+  display: block;
+  box-shadow: none; /* Remove double shadow – glow is on container */
+}
+.image-card::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(0, 255, 255, 0.2) 0%, transparent 80%);
+  z-index: -1;
+  filter: blur(30px);
+  border-radius: 20px;
+}
+/* Add this to your generate_image.css */
+
+.btn-group {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.btn-group .btn {
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-group .btn-light {
+    color: #000;
+    background-color: #fff;
+    border: none;
+}
+
+.btn-group .btn-light:hover {
+    background-color: #f1f1f1;
+    color: #000;
+    transform: translateY(-2px);
+}
+
+
+
+

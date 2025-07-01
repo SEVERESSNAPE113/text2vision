@@ -1,0 +1,100 @@
+{% extends 'header_footer.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zex AI Image Generator - Full Screen</title>
+  <link rel="stylesheet" href="{% static 'css/generate_image.css' %}" />
+</head>
+
+<!-- LOADER OVERLAY STARTS -->
+<div id="loader" class="loader-overlay" style="display: none;">
+  <div class="container">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+</div>
+<!-- LOADER OVERLAY ENDS -->
+
+<div class="form-wrapper">
+  <div class="form-container">
+    <h1>Zex AI Image Generator</h1>
+
+    <form id="imageForm" method="POST" action="/show/">
+      {% csrf_token %}
+
+      <label for="category">Category</label>
+      <select id="category" name="category" class="custom-select" required>
+        {% for cat in category %}
+        <option value="{{ cat.id }}">{{ cat.name }}</option>
+        {% endfor %}
+      </select>
+
+      <label for="suggested_prompts">Suggested Prompts (optional)</label>
+      <select id="suggested_prompts" name="suggested_prompts" class="custom-select">
+        <option value="">-- You can choose a prompt or leave it blank --</option>
+        {% for prom in prompts %}
+        <option value="{{ prom.prompt }}">{{ prom.prompt }}</option>
+        {% endfor %}
+      </select>
+
+      <label for="instruction">Instruction</label>
+      <textarea id="instruction" name="instruction" placeholder="What do you want to generate?" required></textarea>
+
+      <label for="creativity">Creativity (%)</label>
+      <input
+        type="number"
+        id="creativity"
+        name="creativity"
+        min="0"
+        max="100"
+        placeholder="Enter creativity between 0 to 100"
+        required
+      />
+
+      <button type="submit">Generate</button>
+    </form>
+  </div>
+</div>
+
+<!-- Sample Images Section -->
+<div class="sample-images">
+  <h2>Sample Generated Images</h2>
+  <div class="images-grid">
+    <div class="image-card"><img src="{% static 'images/gallery/item-0.png' %}" alt="Sample Image 1"></div>
+    <div class="image-card"><img src="{% static 'images/gallery/item-1.png' %}" alt="Sample Image 2"></div>
+    <div class="image-card"><img src="{% static 'images/gallery/item-8.png' %}" alt="Sample Image 3"></div>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script>
+  // Fill instruction when selecting a suggested prompt
+  document.getElementById('suggested_prompts').addEventListener('change', function() {
+    const selectedPrompt = this.value;
+    document.getElementById('instruction').value = selectedPrompt;
+  });  
+
+  // Show loader when submitting form
+  const form = document.getElementById('imageForm');
+  const loader = document.getElementById('loader');
+
+  form.addEventListener('submit', function() {
+    loader.style.display = 'flex';
+  });
+</script>
+
+{% endblock %}

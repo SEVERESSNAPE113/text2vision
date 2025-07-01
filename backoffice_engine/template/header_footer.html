@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/png">
+    <title>TEXT2VISION</title>
+
+    <!-- Styles External -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fontawesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css' %}"> 
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        function load(){
+            $.ajax({
+                url:'/check/',
+                success:function(data){
+                 console.log(data);
+                },
+            });
+        }
+    </script>
+<style>
+/* Main Menu Styling for Hover Text Effect */
+.main-menu__list .nav-item {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+.main-menu__list .nav-item img,
+.main-menu__list .nav-item .nav-label {
+    display: block;
+    text-align: center;
+    transition: opacity 0.3s ease;
+}
+
+.main-menu__list .nav-item .nav-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.main-menu__list .nav-item:hover img {
+    opacity: 0;
+}
+
+.main-menu__list .nav-item:hover .nav-label {
+    opacity: 1;
+}
+</style>
+
+
+</head>
+
+<body class="bp-bg-body animation-active" onload="load()">
+    <!-- Header Start -->
+    <header class="header header--style2 header--transparent sticky-on" data-aos="fade-down" data-aos-duration="1500">
+        <div id="navbar">
+            <div class="container-fluid p-0">
+                <div class="row align-items-center">
+
+                    <!-- Profile Icon -->
+<!-- Profile Icon -->
+<div class="col-xl-2 col-lg-2 col-md-6 col-6">
+    <div class="header__navigation">
+        <div class="header__menu text-center">
+            <div class="main-menu">
+                <nav class="main-menu__nav">
+                    <ul class="main-menu__list">
+                        <li>
+                            <a href="/profile/" class="nav-item">
+                                <img src="{% static 'icons/svgviewer-output.svg' %}" alt="Profile" style="width:36px;height:36px;filter:brightness(0)invert(1)">
+                                <span class="nav-label">Profile</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="hamburger-icon text-end">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </div>
+</div>
+    
+
+                   <!-- Main Menu -->
+<div class="col-xl-8 col-lg-7 col-md-6 col-6">
+    <div class="header__navigation">
+        <div class="header__menu text-center">
+            <div class="main-menu">
+                <nav class="main-menu__nav">
+                    <ul class="main-menu__list">
+                        <li>
+                            <a href="/index/" class="nav-item">
+                                <img src="{% static '/icons/home.svg' %}" alt="Home" style="width:36px;height:36px;filter:brightness(0)invert(1)">
+                                <span class="nav-label">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/gallery/" class="nav-item">
+                                <img src="{% static '/icons/gallery.svg' %}" alt="Gallery" style="width:36px;height:36px;filter:brightness(0)invert(1)">
+                                <span class="nav-label">My Gallery</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/about/" class="nav-item">
+                                <img src="{% static '/icons/about.svg' %}" alt="About" style="width:36px;height:36px;filter:brightness(0)invert(1)">
+                                <span class="nav-label">About</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/services/" class="nav-item">
+                                <img src="{% static '/icons/service.svg' %}" alt="Services" style="width:36px;height:36px;filter:brightness(0)invert(1)">
+                                <span class="nav-label">Services</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/price/" class="nav-item">
+                                <img src="{% static '/icons/price.svg' %}" alt="Pricing" style="width:36px;height:36px;filter:brightness(0)invert(1)">
+                                <span class="nav-label">Pricing</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/contact/" class="nav-item">
+                                <img src="{% static '/icons/contact.png' %}" alt="Contact" style="width:36px;height:36px;filter:brightness(0)invert(1)">
+                                <span class="nav-label">Contact</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="hamburger-icon text-end">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+                    <!-- Get Started Button -->
+                    <div class="col-xl-2 col-lg-3 d-none d-lg-block">
+                        <div class="header__button text-end">
+                         {% if request.session.id %}
+                        <!-- If user is logged in -->
+                        <div class="header__button text-end">
+                            <div class="header__button text-end d-flex justify-content-end align-items-center">
+                                <a href="/generate_image/" class="bp-btn bp-btn--white me-2">Generate</a>
+                                <a href="/logout/" class="bp-btn bp-btn--white">Logout</a>
+                            </div>
+                        </div>
+                            {% else %}
+                            <!-- If user is not logged in -->
+                            <a href="/login/" class="bp-btn bp-btn--white">Get started</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header End -->
+
+    {% block content %}
+    {% endblock %}
+
+    <!-- Footer Start -->
+    <section class="footer black-bg pt-115">
+        <div class="footer__top pb-60">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-3 col-md-12">
+                        <div class="footer__logo text-lg-start text-md-end">
+                            <a href="/index/">
+                                <!--<img src="{% static 'images/logo-h3.png' %}" alt="FooterLogo">-->
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xl-8 col-lg-9">
+                        <div class="footer-right">
+                            <div class="mb-10">
+                                <p class="footer__text mb-0">Want to talk us? Say hi ✋</p>
+                                <a class="footer__email" href="mailto:text2vision@gmail.com">text2vision@gmail.com</a>
+                            </div>
+                            <div class="footer-widgets">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-6">
+                                        <div class="footer-menu mb-30">
+                                            <h3 class="footer-menu__title mb-20">MENU</h3>
+                                            <ul class="footer-menu__list mb-0">
+                                                <li><a href="/index/">HOME</a></li>
+                                                <li><a href="/about/">ABOUT</a></li>
+                                                <li><a href="/portfolio/">PORTFOLIO</a></li>
+                                                <li><a href="/feedback/">FEEDBACK</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6">
+                                        <div class="footer-menu mb-30">
+                                            <h3 class="footer-menu__title mb-20">RESOURCE</h3>
+                                            <ul class="footer-menu__list mb-0">
+                                                <li><a href="/about/">ARTICLES</a></li>
+                                                <li><a href="/about/">VIDEOS</a></li>
+                                                
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6">
+                                        <div class="footer-menu mb-30">
+                                            <h3 class="footer-menu__title mb-20">CONTACT</h3>
+                                            <ul class="footer-menu__list mb-0">
+                                                <li><a href="/contact/">+91 6355286676</a></li>
+                                                <li><a href="/contact/">+91 7359753203</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6">
+                                        <div class="footer-menu mb-30">
+                                            <h3 class="footer-menu__title mb-20">Social</h3>
+                                            <ul class="footer-menu__list mb-0">
+                                                <li><a href="https://twitter.com/">TWITTER</a></li>
+                                                <li><a href="https://instagram.com/">INSTAGRAM</a></li>
+                                                <li><a href="https://facebook.com/">FACEBOOK</a></li>
+                                                <li><a href="https://www.behance.net/">BEHANCE</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer__bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="footer__bottom--inner pt-15">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6">
+                                    <p class="footer__copyright mb-15"></p>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="footer__links mb-15">
+                                        <span><a href="/about/">PRIVACY</a></span>
+                                        <span> - </span>
+                                        <span><a href="/about/">TERMS</a></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer End -->
+
+    <!-- JS Files -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'js/gsap.min.js' %}"></script>
+    <script src="{% static 'js/ScrollTrigger.min.js' %}"></script>
+    <script src="{% static 'js/aos.js' %}"></script>
+    <script src="{% static 'js/magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/app.js' %}"></script>
+
+</body>
+
+</html>
