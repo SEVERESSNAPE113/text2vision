@@ -1,0 +1,88 @@
+{% extends 'header_footer.html' %}  
+{% load static mathfilters %}  
+{% load static %}  
+{% block content %}  
+<head>  
+  <meta charset="UTF-8">  
+  <title>AI Image Gallery</title>  
+  <link rel="stylesheet" href="{% static 'css/gallery.css' %}">  
+  <!-- Font Awesome for download icon -->  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">  
+</head>  
+
+<div class="gallery-wrapper">
+  <h1 class="gallery-title">Your Creations</h1>
+
+  <!-- Filter by System Prompt Dropdown -->
+  <div class="filter-wrapper" style="text-align: center; margin: 20px 0;">
+    <label for="category-filter" style="font-size: 16px; font-weight: bold; color: #fff;">
+      Sort by System Prompt:
+    </label>
+    <select id="category-filter" onchange="filterImages()" style="padding: 8px 12px; font-size: 15px; border-radius: 5px;">
+      <option value="all">All</option>
+      {% for cat in cat %}
+        <option value="{{ cat.name|escape }}">
+            {{ cat.name }}
+        </option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <!-- Images -->
+  <div class="gallery-container">
+    {% for image in images %}
+      <div class="gallery-item"
+           data-category="{{ image.system_prompt|escape }}"
+           onclick="openModal('{{ image.image.url }}', '{{ image.system_prompt }}', '{{ image.user_prompt }}', '{{ image.temprature|mul:100 }}%')">
+        <img src="{{ image.image.url }}" alt="Generated Image" />
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<!-- Modal -->  
+<div id="myModal" class="modal">  
+  <div class="modal-box">  
+    <!-- Left: Image + Download button -->  
+    <div class="modal-left">  
+      <div class="modal-image-wrapper">  
+        <img id="modalImage" src="" alt="Full Image" />  
+        <a id="downloadBtn" href="#" download class="download-btn" title="Download Image">  
+          <i class="fas fa-arrow-down"></i>  
+        </a>  
+      </div>  
+    </div>  
+
+    <!-- Right: Image Metadata -->  
+    <div class="modal-right">  
+      <span class="close"onclick="closeModal()">&times;</span>  
+      <h2>Image Details</h2>  
+      <p><strong>Category:</strong> <span id="modalCategory"></span></p>  
+      <p><strong>Instruction:</strong> <span id="modalInstruction"></span></p>  
+      <p><strong>Creativity:</strong> <span id="modalCreativity"></span></p>  
+    </div>  
+  </div>  
+</div>  
+
+<!-- New Buttons Section -->  
+<div class="gallery-buttons">  
+    <a href="/generate_image/" class="theme-button">Generate More</a>  
+</div>  
+
+<!-- Scripts -->  
+<script src="{% static 'js/gallery.js' %}"></script>  
+<script>  
+function filterImages() {
+  const selectedCategory = document.getElementById('category-filter').value;
+  const images = document.querySelectorAll('.gallery-item');
+  images.forEach(img => {
+    const categoryId = img.getAttribute('data-category');
+    if (selectedCategory === 'all' || categoryId === selectedCategory) {
+      img.style.display = 'block';
+    } else {
+      img.style.display = 'none';
+    }
+  });
+}
+</script>  
+{% endblock %}  

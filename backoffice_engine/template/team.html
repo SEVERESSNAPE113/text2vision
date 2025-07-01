@@ -1,0 +1,281 @@
+{%extends 'header_footer.html'%}
+{%load static%}
+{%block content%}
+
+<body class="bp-bg-body bg-no-repeat animation-active">
+    <!-- start journey -->
+
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="loader">
+            <div>
+                <ul>
+                    <li>
+                        <svg viewBox="0 0 90 120" fill="currentColor">
+                            <path
+                                d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z">
+                            </path>
+                        </svg>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 90 120" fill="currentColor">
+                            <path
+                                d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z">
+                            </path>
+                        </svg>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 90 120" fill="currentColor">
+                            <path
+                                d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z">
+                            </path>
+                        </svg>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 90 120" fill="currentColor">
+                            <path
+                                d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z">
+                            </path>
+                        </svg>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 90 120" fill="currentColor">
+                            <path
+                                d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z">
+                            </path>
+                        </svg>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 90 120" fill="currentColor">
+                            <path
+                                d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z">
+                            </path>
+                        </svg>
+                    </li>
+                </ul>
+            </div><span>Loading Zex.ai</span>
+        </div>
+    </div>
+    <!-- Preloader End -->
+    <!-- Scroll Bottom To Top -->
+    <button class="scrollToTopBtn showBtn"><i class="fa-solid fa-hand-point-up"></i></button>
+
+
+    <!-- Mobile Menu -->
+    <div class="mobile-overlay mobile-overlay--sidebar">
+        <div class="mobile-overlay__box">
+            <div class="mobile-overlay__header">
+                <div class="mobile-overlay__logo">
+                    <img src="{% static 'images/logo.png' %}" alt="">
+                </div>
+                <div class="mobile-overlay__close">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+            </div>
+            <div class="mobile-overlay__main-menu">
+                <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+            </div>
+        </div>
+    </div>
+    <div class="mobile-overlay--backdrop"></div>
+
+    <!-- main wrapper -->
+    <main id="bp-main">
+
+        <!-- Team Area -->
+        <section class="team pt-200 pb-110">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 mx-auto">
+                        <h2 class="section-title__big text-white mb-25">
+    Our incredible team is making wonders
+</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="team-col">
+                            <div class="team-item mb-30" data-aos="fade-down" data-aos-duration="3000"
+                                data-aos-once="true">
+                                <div class="team-block">
+                                    <div class="team-block__image">
+                                        <img src="{% static 'images/team/member-1.jpg' %}" alt="Team Member bPlugins">
+                                    </div>
+                                    <div class="team-block__content">
+                                        <div class="team-block__social">
+                                            <ul>
+                                                <li><a href="#"><i class="fa-brands fa-google"></i></a></li>
+                                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                                                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                                <li><a href="#"><i class="fa-brands fa-pinterest-p"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="team-block__author">
+                                            <h4 class="team-block_author_name text-white">Lana John</h4>
+                                            <span class="team-block_author_desig text-white">GAME DEVELOPER</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-item mb-30" data-aos="fade-down" data-aos-duration="2500"
+                                data-aos-once="true">
+                                <div class="team-block">
+                                    <div class="team-block__image">
+                                        <img src="{% static 'images/team/member-4.jpg' %}" alt="Team Member bPlugins">
+                                    </div>
+                                    <div class="team-block__content">
+                                        <div class="team-block__social">
+                                            <ul>
+                                                <li><a href="#"><i class="fa-brands fa-google"></i></a></li>
+                                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                                                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                                <li><a href="#"><i class="fa-brands fa-pinterest-p"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="team-block__author">
+                                            <h4 class="team-block_author_name text-white">Lewis hemilton</h4>
+                                            <span class="team-block_author_desig text-white">GAME DEVELOPER</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="team-col team-col--middle">
+                            <div class="team-item mb-30" data-aos="fade-down" data-aos-duration="2000"
+                                data-aos-once="true">
+                                <div class="team-block">
+                                    <div class="team-block__image">
+                                        <img src="{% static 'images/team/member-2.jpg' %}" alt="Team Member bPlugins">
+                                    </div>
+                                    <div class="team-block__content">
+                                        <div class="team-block__social">
+                                            <ul>
+                                                <li><a href="#"><i class="fa-brands fa-google"></i></a></li>
+                                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                                                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                                <li><a href="#"><i class="fa-brands fa-pinterest-p"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="team-block__author">
+                                            <h4 class="team-block_author_name text-white">Abhishek</h4>
+                                            <span class="team-block_author_desig text-white">GAME DEVELOPER</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-item mb-30" data-aos="fade-down" data-aos-duration="1500"
+                                data-aos-once="true">
+                                <div class="team-block">
+                                    <div class="team-block__image">
+                                        <img src="{% static 'images/team/member-5.jpg' %}" alt="Team Member bPlugins">
+                                    </div>
+                                    <div class="team-block__content">
+                                        <div class="team-block__social">
+                                            <ul>
+                                                <li><a href="#"><i class="fa-brands fa-google"></i></a></li>
+                                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                                                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                                <li><a href="#"><i class="fa-brands fa-pinterest-p"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="team-block__author">
+                                            <h4 class="team-block_author_name text-white">Drishti</h4>
+                                            <span class="team-block_author_desig text-white">GAME DEVELOPER</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="team-col">
+                            <div class="team-item mb-30" data-aos="fade-down" data-aos-duration="3000"
+                                data-aos-once="true">
+                                <div class="team-block">
+                                    <div class="team-block__image">
+                                        <img src="{% static 'images/team/member-3.jpg' %}" alt="Team Member bPlugins">
+                                    </div>
+                                    <div class="team-block__content">
+                                        <div class="team-block__social">
+                                            <ul>
+                                                <li><a href="#"><i class="fa-brands fa-google"></i></a></li>
+                                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                                                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                                <li><a href="#"><i class="fa-brands fa-pinterest-p"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="team-block__author">
+                                            <h4 class="team-block_author_name text-white">Diva</h4>
+                                            <span class="team-block_author_desig text-white">GAME DEVELOPER</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-item mb-30" data-aos="fade-down" data-aos-duration="3000"
+                                data-aos-once="true">
+                                <div class="team-block">
+                                    <div class="team-block__image">
+                                        <img src="{% static 'images/team/member-6.jpg' %}" alt="Team Member bPlugins" data-aos-once="true">
+                                    </div>
+                                    <div class="team-block__content">
+                                        <div class="team-block__social">
+                                            <ul>
+                                                <li><a href="#"><i class="fa-brands fa-google"></i></a></li>
+                                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                                                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                                <li><a href="#"><i class="fa-brands fa-pinterest-p"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="team-block__author">
+                                            <h4 class="team-block_author_name text-white">Sydney Sweeny</h4>
+                                            <span class="team-block_author_desig text-white">GAME DEVELOPER</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-bottom overflow-hidden pt-65">
+                <div class="container-fluid p-0">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="text-headlines">
+                                <div class="text-headlines__item">AI IMAGE GENERATE</div>
+                                <div class="text-headlines__item">AI IMAGE GENERATE</div>
+                                <div class="text-headlines__item">AI IMAGE GENERATE</div>
+                                <div class="text-headlines__item">AI IMAGE GENERATE</div>
+                                <div class="text-headlines__item">AI IMAGE GENERATE</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Team Area End -->
+
+    </main>
+    <!-- end main wrapper -->
+
+  
+    <!-- end journey -->
+
+    <!-- Javascript External -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'js/gsap.min.js' %}"></script>
+    <script src="{% static 'js/ScrollTrigger.min.js' %}"></script>
+    <script src="{% static 'js/aos.js' %}"></script>
+    <script src="{% static 'js/magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/app.js' %}"></script>
+    <!-- Javascript External End -->
+
+</body>
+{%endblock%}
+
+
+<!-- Mirrored from bplugins.net/zex/team.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 Jun 2025 03:38:07 GMT -->

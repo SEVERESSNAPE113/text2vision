@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+{%extends 'header_footer.html'%}
+{%block content%}
+
+<!-- Mirrored from bplugins.net/zex/blog-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 Jun 2025 03:38:10 GMT -->
+<head>
+    {%load static%}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/png">
+    <!-- Site title -->
+    <title>Blog Details | Zex - Ai Image Generate Website HTML5 Template | 2023</title>
+
+    <!-- Styles External -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fontawesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Styles External End -->
+</head>
+
+<body class="bp-bg-body">
+    <!-- start journey -->
+
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="loader">
+            <div>
+                <ul>
+                    <li>
+                        <svg viewBox="0 0 90 120" fill="currentColor">
+                            <path
+                                d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z">
+                            </path>
+                        </svg>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 90 120" fill="currentColor">
+                            <path
+                                d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z">
+                            </path>
+                        </svg>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 90 120" fill="currentColor">
+                            <path
+                                d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z">
+                            </path>
+                        </svg>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 90 120" fill="currentColor">
+                            <path
+                                d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z">
+                            </path>
+                        </svg>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 90 120" fill="currentColor">
+                            <path
+                                d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z">
+                            </path>
+                        </svg>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 90 120" fill="currentColor">
+                            <path
+                                d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z">
+                            </path>
+                        </svg>
+                    </li>
+                </ul>
+            </div><span>Loading Zex.ai</span>
+        </div>
+    </div>
+    <!-- Preloader End -->
+    <!-- Scroll Bottom To Top -->
+    <button class="scrollToTopBtn showBtn"><i class="fa-solid fa-hand-point-up"></i></button>
+
+   
+    <!-- Mobile Menu -->
+    <div class="mobile-overlay mobile-overlay--sidebar">
+        <div class="mobile-overlay__box">
+            <div class="mobile-overlay__header">
+                <div class="mobile-overlay__logo">
+                    <img src="{% static 'images/logo.png' %}" alt="">
+                </div>
+                <div class="mobile-overlay__close">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+            </div>
+            <div class="mobile-overlay__main-menu">
+                <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+            </div>
+        </div>
+    </div>
+    <div class="mobile-overlay--backdrop"></div>
+
+    <!-- main wrapper -->
+    <main id="bp-main">
+
+        <div class="page-title w-100">
+            <img class="page-title__bg w-100" src="{% static 'images/bg/blog-details-bg.png' %}" alt="">
+        </div>
+        <!-- Blog Area -->
+        <section class="section blog--padding">
+            <div class="container">
+                <div class="blog-details">
+                    <div class="row">
+                        <div class="col-lg-9 offset-lg-1">
+                            <header class="blog-details__header">
+                                <span class="blog-details__tag">TXAA</span>
+                                <h2 class="blog-details__heading text-white">Exploring the Power of AI Image Generator
+                                    Tools</h2>
+                                <div class="blog-details__metas pt-15">
+                                    <ul>
+                                        <li>
+                                            <svg width="18" height="20" viewBox="0 0 18 20" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <rect x="1" y="3" width="16" height="16" rx="2" stroke="white"
+                                                    stroke-width="1.125" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M13 1V5" stroke="white" stroke-width="1.125"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M5 1V5" stroke="white" stroke-width="1.125"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M1 9H17" stroke="white" stroke-width="1.125"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                            <span>Today 11:43pm</span>
+                                        </li>
+                                        <li>
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="4" cy="10" r="3" stroke="white" stroke-width="1.125"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <circle cx="16" cy="4" r="3" stroke="white" stroke-width="1.125"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <circle cx="16" cy="16" r="3" stroke="white" stroke-width="1.125"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M6.7002 8.6998L13.3002 5.2998" stroke="white"
+                                                    stroke-width="1.125" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M6.7002 11.2998L13.3002 14.6998" stroke="white"
+                                                    stroke-width="1.125" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                            <span>Share</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </header>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-details--content pt-50">
+                    <div class="row">
+                        <div class="col-lg-10 mx-auto">
+                            <div class="blog-details--content__wrapper">
+                                <h3 class="blog-details--content__title text-white mb-15">About the position</h3>
+                                <p class="text-white-80 blog-details--content__text mb-25">Met, everyone in my team
+                                    works
+                                    towards the
+                                    samegoal. This
+                                    enabled
+                                    our teams to ship new
+                                    ideas and
+                                    feel more capable. Podcasting operational — change management inside of workflows.
+                                    Completely
+                                    synergize.</p>
+                                <p class="text-white-80 blog-details--content__text mb-25">But I must explain to you how
+                                    all
+                                    this
+                                    mistaken idea of
+                                    denouncing
+                                    pleasure and praising
+                                    pain was
+                                    born and I will give you a complete account of the system, and expound the actual
+                                    teachings of
+                                    the great explorer of the truth, the master-builder of human happiness. No one
+                                    rejects,
+                                    dislikes, or avoids pleasure itself</p>
+                                <p class="text-white-80 blog-details--content__text mb-50">On the other hand, we
+                                    denounce
+                                    with
+                                    righteous indignation and
+                                    dislike men who are so
+                                    beguiled and
+                                    demoralized by the charms of pleasure of the moment, so blinded by desire, that they
+                                    cannot
+                                    foresee the pain and trouble that are bound to ensue; and equal blame belongs to
+                                    those
+                                    who fail
+                                    in their duty through weakness of will, which is the same as saying through
+                                    shrinking
+                                    from toil
+                                    and pain. These cases are perfectly simple and easy to distinguish. In a free hour,
+                                    when
+                                    our
+                                    power of choice is untrammelled and when nothing prevents our being able to do what
+                                    we
+                                    like
+                                    best, every pleasure is to be welcomed and every pain avoided.</p>
+                                <div class="review review--style2 bp-slide-wrap mb-50">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-lg-2">
+                                                <div class="review-icon text-end">
+                                                    <img src="{% static 'icons/quote-icon-style3.png' %}" alt="quote icon">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-8 offset-lg-1">
+                                                <div class="review-wrapper">
+                                                    <div class="review-active swiper">
+                                                        <div class="swiper-wrapper">
+                                                            <div class="swiper-slide">
+                                                                <div class="swiper-wrapper">
+                                    {%for data in f%}
+                                    <div class="swiper-slide">
+                                        <div class="review-block">
+                                            <p class="review-block__text text-white mb-25">“{{data.comment}}."</p>
+                                            <span class="review-block__author text-white">- {{data.user.name}}</span>
+                                        </div>
+                                    </div>
+                                    {%endfor%}
+                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="blog-details--content__title text-white mb-15">About the position</h3>
+                                <p class="text-white-80 blog-details--content__text mb-25">Met, everyone in my team
+                                    works
+                                    towards the
+                                    samegoal. This
+                                    enabled
+                                    our teams to ship new
+                                    ideas and feel more capable. Podcasting operational — change management inside of
+                                    workflows. Completely synergize.</p>
+                                <p class="text-white-80 blog-details--content__text mb-50">But I must explain to you how
+                                    all
+                                    this
+                                    mistaken idea of
+                                    denouncing
+                                    pleasure and praising
+                                    pain was born and I will give you a complete account of the system, and expound the
+                                    actual teachings of the great explorer of the truth, the master-builder of human
+                                    happiness. No one rejects, dislikes, or avoids pleasure itself</p>
+                                <div class="row">
+                                    <div class="col-lg-6 mb-50">
+                                        <div class="blog-details--content__img">
+                                            <img class="border-radius-default w-100"
+                                                src="{% static 'images/blog/blog-details-1.jpg' %}" alt="Blog Details">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 mb-50">
+                                        <div class="blog-details--content__img">
+                                            <img class="border-radius-default w-100"
+                                                src="{% static 'images/blog/blog-details-2.jpg' %}" alt="Blog Details">
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="blog-details--content__title text-white mb-15">Reshaping the Creative
+                                    Landscape
+                                </h3>
+                                <p class="text-white-80 blog-details--content__text mb-25">Met, everyone in my team
+                                    works
+                                    towards the
+                                    samegoal. This
+                                    enabled
+                                    our teams to ship new
+                                    ideas and feel more capable. Podcasting operational — change management inside of
+                                    workflows. Completely synergize.</p>
+                                <p class="text-white-80 blog-details--content__text mb-25">But I must explain to you how
+                                    all
+                                    this
+                                    mistaken idea of
+                                    denouncing
+                                    pleasure and praising
+                                    pain was born and I will give you a complete account of the system, and expound the
+                                    actual teachings of the great explorer of the truth, the master-builder of human
+                                    happiness. No one rejects, dislikes, or avoids pleasure itself</p>
+                                <p class="text-white-80 blog-details--content__text mb-25">
+                                    On the other hand, we denounce with righteous indignation and dislike men who are so
+                                    beguiled and demoralized by the charms of pleasure of the moment, so blinded by
+                                    desire,
+                                    that they cannot foresee the pain and trouble that are bound to ensue; and equal
+                                    blame
+                                    belongs to those who fail in their duty through weakness of will, which is the same
+                                    as
+                                    saying through shrinking from toil and pain. These cases are perfectly simple and
+                                    easy
+                                    to distinguish. In a free hour, when our power of choice is untrammelled and when
+                                    nothing prevents our being able to do what we like best, every pleasure is to be
+                                    welcomed and every pain avoided.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Blog Area End -->
+
+    </main>
+    <!-- end main wrapper -->
+
+ 
+    <!-- end journey -->
+
+    <!-- Javascript External -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+
+    <script src="{% static 'js/swiper-bundle.min.js' %}"></script>
+
+    <script src="{% static 'js/gsap.min.js' %}"></script>
+
+    <script src="{% static 'js/ScrollTrigger.min.js' %}"></script>
+
+    <script src="{% static 'js/aos.js' %}"></script>
+
+    <script src="{% static 'js/magnific-popup.min.js' %}"></script>
+    <script src="app.js"></script>
+    <!-- Javascript External End -->
+</body>
+
+{%endblock%}

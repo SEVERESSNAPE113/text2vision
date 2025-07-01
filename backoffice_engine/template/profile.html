@@ -1,0 +1,70 @@
+{% extends 'header_footer.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+</head>
+
+<body>
+    <div class="full-container">
+        <div class="profile-header">
+            <h1>Welcome, {{ e.name }}</h1>
+            <p>Manage your account settings and subscription plan here.</p>
+        </div>
+
+        <div class="profile-sections">
+
+            <!-- Active Plan -->
+<div class="card">
+    <h2>Active Plan</h2>
+    <p><strong>Plan:</strong> {{ s.plan.name }}</p>
+    <p><strong>Total Plan Credit:</strong> {{ s.plan.credit }}</p>
+    <p><strong>Credit Left:</strong> {{ s.pending_credit }}</p>
+    <p><strong>Next Billing Date:</strong> {{ s.end_date }}</p>
+    <p><strong>Status:</strong> {{ s.status }}</p>
+</div>
+
+            <!-- Your Profile -->
+            <div class="card">
+                <h2>Your Profile</h2>
+                <p><strong>Name:</strong> {{ e.name }}</p>
+                <p><strong>Email:</strong> {{ e.email }}</p>
+                <p><strong>Mobile Number:</strong> {{ e.mobile_number }}</p>
+                <p><strong>Password:</strong> ********</p>
+                <a href="#" id="updateProfileBtn" class="btn btn-primary">Update Profile</a>
+            </div>
+
+            <!-- Danger Zone -->
+            <div class="card danger-zone">
+                <h2>Account Action</h2>
+                <a class="btn btn-danger" href="/delete_account/{{e.id}}">Delete Account</a>
+                <br>
+                <a class="btn btn-logout" href="/logout/">Logout</a>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Hidden Update Profile Form -->
+    <!-- Hidden Update Profile Form -->
+<div id="updateProfileForm" class="fullscreen-form">
+    <span class="close-btn" id="closeForm">&times;</span>
+    <h2>Update Your Profile</h2>
+    <form method="POST" action="/update_profile/{{e.id}}">
+        {% csrf_token %}
+        <input type="text" name="name" value="{{ e.name }}" required>
+        <input type="email" name="email" value="{{ e.email }}" required>
+        <input type="text" name="mobile_number" value="{{ e.mobile_number }}" required>
+        <button type="submit">Save Changes</button>
+    </form>
+</div>
+
+
+    <script src="{% static 'js/profile.js' %}"></script>
+</body>
+{% endblock %}

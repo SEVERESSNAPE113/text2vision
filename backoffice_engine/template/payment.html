@@ -1,0 +1,37 @@
+{% extends 'header_footer.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Successful</title>
+  <link rel="stylesheet" href="{% static 'css/payment.css' %}">
+</head>
+
+<body>
+  <div class="full-container">
+    <h1 class="success-heading">Payment Successful!</h1>
+    <p class="success-message">
+      Thank you for your payment.<br>
+      You will be redirected to the homepage in <span id="countdown">10</span> seconds.
+    </p>
+    <a href="/index/" class="btn btn-primary">Go to Homepage Now</a>
+  </div>
+
+  <script>
+    let seconds = 10;
+    const countdownElement = document.getElementById('countdown');
+    
+    const countdownInterval = setInterval(() => {
+      seconds--;
+      countdownElement.textContent = seconds;
+      if (seconds <= 0) {
+        clearInterval(countdownInterval);
+        window.location.href = "/index/";
+      }
+    }, 1000);
+  </script>
+</body>
+
+{% endblock %}
